@@ -59,6 +59,22 @@ public class TestGridMatrix {
 	public void testCanCountNeighbors() {
 		GridMatrix gm = new GridMatrix(3,4);
 		assertEquals(0, gm.countLiveNeighborsAt(1,1));
+		gm.setAt(0, 0, true);
+		assertEquals(1, gm.countLiveNeighborsAt(1,1));
+		gm.setAt(1, 0, true);
+		assertEquals(2, gm.countLiveNeighborsAt(1,1));
+		gm.setAt(2, 0, true);
+		assertEquals(3, gm.countLiveNeighborsAt(1,1));
+		gm.setAt(0, 1, true);
+		assertEquals(4, gm.countLiveNeighborsAt(1,1));
+		gm.setAt(2, 1, true);
+		assertEquals(5, gm.countLiveNeighborsAt(1,1));
+		gm.setAt(0, 2, true);
+		assertEquals(6, gm.countLiveNeighborsAt(1,1));
+		gm.setAt(1, 2, true);
+		assertEquals(7, gm.countLiveNeighborsAt(1,1));
+		gm.setAt(2, 2, true);
+		assertEquals(8, gm.countLiveNeighborsAt(1,1));
 	}
 
 	
