@@ -39,5 +39,20 @@ public class TestGridMatrix {
 				assertEquals(false, gm.getAt(x, y));
 	}
 	
-
+	@Test
+	public void testGridStartsOutAllFalseButCanBeSwappedToAllTrue() {
+		GridMatrix gm = new GridMatrix(3,4);
+		for(int x = 0; x < gm.getWidth(); x++) 
+			for(int y = 0; y < gm.getHeight(); y++)
+				assertEquals(false, gm.getAt(x, y));
+		
+		for(int x = 0; x < gm.getWidth(); x++) 
+			for(int y = 0; y < gm.getHeight(); y++)
+				gm.setAt(x, y, true);
+		
+		for(int x = 0; x < gm.getWidth(); x++) 
+			for(int y = 0; y < gm.getHeight(); y++)
+				assertEquals(true, gm.getAt(x, y));
+	}
+	
 }
