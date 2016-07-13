@@ -34,6 +34,19 @@ public class GridMatrix {
 	public boolean getAt(int x, int y) {
 		return bsRowArray[y].get(x);
 	}
+	
+	public void print() {
+		for(int y=0;y<getHeight();y++) {		
+			for(int x=0;x<getWidth();x++) {
+				if(getAt(x,y))
+					System.out.print("*");
+				else
+					System.out.print(".");
+			}
+			System.out.println("\n");
+		}
+				
+	}
 
 	public int countLiveNeighborsAt(int x, int y) {
 		int iNumLiveNeighbors = 0;

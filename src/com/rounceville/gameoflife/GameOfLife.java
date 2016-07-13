@@ -7,8 +7,11 @@ public class GameOfLife {
 		
 		for(int x=0;x<gm.getWidth();x++) {
 			for(int y=0;y<gm.getHeight();y++) {
-				if(gm.countLiveNeighborsAt(x, y) < 2)
+				int iLiveNeighborCount = gm.countLiveNeighborsAt(x, y);
+				if(iLiveNeighborCount < 2 && gm.getAt(x, y))
 					gm2.setAt(x, y, false);
+				if(iLiveNeighborCount > 3 && gm.getAt(x, y))
+					gm2.setAt(x, y, false);					
 			}
 		}
 		
