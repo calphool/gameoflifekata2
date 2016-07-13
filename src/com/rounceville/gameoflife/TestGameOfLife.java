@@ -78,6 +78,18 @@ public class TestGameOfLife {
 		assertEquals(true, allDead(gm2));
 	}
 	
+	@Test
+	public void testAnyLiveCellWithMoreThanThreeLiveNeighborsDiesTest2() {
+		GridMatrix gm = new GridMatrix(3,4);
+		gm.setAt(1, 0, true);
+		gm.setAt(0, 0, true);		
+		gm.setAt(0, 1, true);
+		gm.setAt(1, 1, true);		
+		gm.setAt(2, 1, true);
+		GridMatrix gm2 = GameOfLife.nextGeneration(gm);
+		assertEquals(false, gm2.getAt(1, 0));
+		assertEquals(false, gm2.getAt(1, 1));		
+	}
 	
 	
 }
