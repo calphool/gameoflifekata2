@@ -20,5 +20,6 @@ public class TestGameOfLife {
 		assertNotEquals(gm, gm2);		
 		assertEquals(GridMatrix.class, gm2.getClass());
 	}
+
 	
 }

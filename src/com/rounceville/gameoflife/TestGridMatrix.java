@@ -54,5 +54,12 @@ public class TestGridMatrix {
 			for(int y = 0; y < gm.getHeight(); y++)
 				assertEquals(true, gm.getAt(x, y));
 	}
+
+	@Test
+	public void testCanCountNeighbors() {
+		GridMatrix gm = new GridMatrix(3,4);
+		assertEquals(0, gm.countLiveNeighborsAt(1,1));
+	}
+
 	
 }

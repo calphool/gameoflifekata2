@@ -35,4 +35,10 @@ public class GridMatrix {
 		return bsRowArray[y].get(x);
 	}
 
+	public int countLiveNeighborsAt(int x, int y) {
+		int iNumLiveNeighbors = 0;
+		
+		return iNumLiveNeighbors;
+	}
+
 }
