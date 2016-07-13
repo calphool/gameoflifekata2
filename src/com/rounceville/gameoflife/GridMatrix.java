@@ -38,21 +38,21 @@ public class GridMatrix {
 	public int countLiveNeighborsAt(int x, int y) {
 		int iNumLiveNeighbors = 0;
 		
-		if(getAt(x-1, y-1))
+		if(x-1 >= 0 && y-1 >= 0 && getAt(x-1, y-1))
 			iNumLiveNeighbors++;
-		if(getAt(x  , y-1))
+		if(y-1 >= 0 && getAt(x  , y-1))
 			iNumLiveNeighbors++;
-		if(getAt(x+1, y-1))
+		if(x+1 < getWidth() && y-1 >= 0 && getAt(x+1, y-1))
 			iNumLiveNeighbors++;
-		if(getAt(x-1, y))
+		if(x-1 >= 0 && getAt(x-1, y))
 			iNumLiveNeighbors++;
-		if(getAt(x+1, y))
+		if(x+1 < getWidth() && getAt(x+1, y))
 			iNumLiveNeighbors++;
-		if(getAt(x-1, y+1))
+		if(x-1 >= 0 && y+1 < getHeight() && getAt(x-1, y+1))
 			iNumLiveNeighbors++;
-		if(getAt(x, y+1))
+		if(y+1 < getHeight() && getAt(x, y+1))
 			iNumLiveNeighbors++;
-		if(getAt(x+1, y+1))
+		if(x+1 < getWidth() && y+1 < getHeight() && getAt(x+1, y+1))
 			iNumLiveNeighbors++;
 
 		
