@@ -13,4 +13,11 @@ public class TestGameOfLife {
 		assertEquals(3, gm.getWidth());
 	}
 
+	@Test
+	public void testNextGenerationProducesNewGridMatrix() {
+		GridMatrix gm = new GridMatrix(3,4);
+		GridMatrix gm2 = GameOfLife.nextGeneration(gm);
+		assertNotEquals(gm, gm2);
+	}
+	
 }
