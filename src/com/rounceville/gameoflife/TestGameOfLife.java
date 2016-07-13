@@ -175,5 +175,33 @@ public class TestGameOfLife {
 		assertEquals(true,  gm2.getAt(1, 1));
 		assertEquals(false,  gm2.getAt(0, 2));
 	}
+
+	public void testAnyLiveCellWithTwoOrThreeLiveNeighborsLivesOnToTheNextGenerationTest6() {
+		GridMatrix gm = new GridMatrix(3,3);
+		gm.setAt(1, 0, true);	
+		gm.setAt(1, 1, true);
+		gm.setAt(1, 2, true);
+		GridMatrix gm2 = GameOfLife.nextGeneration(gm);
+		assertEquals(false, gm2.getAt(1, 0));
+		assertEquals(true,  gm2.getAt(1, 1));
+		assertEquals(false, gm2.getAt(1, 2));
+	}
+	
+	public void testAnyLiveCellWithTwoOrThreeLiveNeighborsLivesOnToTheNextGenerationTest7() {
+		GridMatrix gm = new GridMatrix(3,3);
+		gm.setAt(0, 0, true);	
+		gm.setAt(1, 0, true);
+		gm.setAt(2, 0, true);
+		gm.setAt(1, 1, true);	
+		gm.setAt(0, 2, true);
+		
+		GridMatrix gm2 = GameOfLife.nextGeneration(gm);
+		assertEquals(true, gm2.getAt(0, 0));
+		assertEquals(true, gm2.getAt(1, 0));
+		assertEquals(true, gm2.getAt(2, 0));
+		assertEquals(false, gm2.getAt(1, 1));		
+		assertEquals(false, gm2.getAt(0, 2));		
+	}
+	
 	
 }
