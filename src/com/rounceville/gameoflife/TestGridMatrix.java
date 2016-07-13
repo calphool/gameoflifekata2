@@ -31,6 +31,13 @@ public class TestGridMatrix {
 		assertEquals(true, gm.getAt(2,3));		
 	}
 
+	@Test
+	public void testGridStartsOutAllFalse() {
+		GridMatrix gm = new GridMatrix(3,4);
+		for(int x = 0; x < gm.getWidth(); x++) 
+			for(int y = 0; y < gm.getHeight(); y++)
+				assertEquals(false, gm.getAt(x, y));
+	}
 	
 
 }
