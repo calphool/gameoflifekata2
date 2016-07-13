@@ -56,8 +56,14 @@ public class TestGameOfLife {
 		gm.setAt(2, 0, true);
 		gm.setAt(0, 3, true);		
 		gm.setAt(2, 3, true);
-		gm.setAt(1, 1, true);		
-		assertEquals(false, allDead(GameOfLife.nextGeneration(gm)));		
+		gm.setAt(1, 1, true);
+		GridMatrix gm2 = GameOfLife.nextGeneration(gm);
+		assertEquals(false, allDead(gm2));
+		assertEquals(true, gm2.getAt(1, 1));
+		assertEquals(false, gm2.getAt(0, 0));		
+		assertEquals(false, gm2.getAt(2, 0));		
+		assertEquals(false, gm2.getAt(0, 3));
+		assertEquals(false, gm2.getAt(2, 3));		
 	}	
 	
 	
