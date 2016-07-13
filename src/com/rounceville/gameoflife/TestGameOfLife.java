@@ -17,7 +17,8 @@ public class TestGameOfLife {
 	public void testNextGenerationProducesNewGridMatrix() {
 		GridMatrix gm = new GridMatrix(3,4);
 		GridMatrix gm2 = GameOfLife.nextGeneration(gm);
-		assertNotEquals(gm, gm2);
+		assertNotEquals(gm, gm2);		
+		assertEquals(GridMatrix.class, gm2.getClass());
 	}
 	
 }
