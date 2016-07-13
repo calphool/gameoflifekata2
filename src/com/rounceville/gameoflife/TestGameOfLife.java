@@ -29,12 +29,25 @@ public class TestGameOfLife {
 		
 		return true;
 	}
+	
+	
 	@Test
-	public void testAnyLiveCellWithFewerThanTwoLiveNeighborsDies() {
+	public void testAnyLiveCellWithFewerThanTwoLiveNeighborsDiesTest1() {
 		GridMatrix gm = new GridMatrix(3,4);
 		gm.setAt(1, 1, true);
 		assertEquals(true, allDead(GameOfLife.nextGeneration(gm)));
+		
 	}
+	
+	@Test
+	public void testAnyLiveCellWithFewerThanTwoLiveNeighborsDiesTest2() {
+		GridMatrix gm = new GridMatrix(3,4);
+		gm.setAt(0, 0, true);
+		gm.setAt(2, 0, true);
+		gm.setAt(0, 3, true);		
+		gm.setAt(2, 3, true);
+		assertEquals(true, allDead(GameOfLife.nextGeneration(gm)));		
+	}	
 
 	
 }
