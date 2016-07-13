@@ -126,6 +126,22 @@ public class TestGridMatrix {
 		assertEquals(5, gm.countLiveNeighborsAt(2,1));
 	}
 	
+	@Test
+	public void testCanCountNeighborsOnBottomEdge() {
+		GridMatrix gm = new GridMatrix(3,4);
+		assertEquals(0, gm.countLiveNeighborsAt(1,3));
+
+		gm.setAt(0, 3, true);
+		assertEquals(1, gm.countLiveNeighborsAt(1,3));
+		gm.setAt(0, 2, true);
+		assertEquals(2, gm.countLiveNeighborsAt(1,3));
+		gm.setAt(1, 2, true);
+		assertEquals(3, gm.countLiveNeighborsAt(1,3));
+		gm.setAt(2, 2, true);
+		assertEquals(4, gm.countLiveNeighborsAt(1,3));
+		gm.setAt(2, 3, true);
+		assertEquals(5, gm.countLiveNeighborsAt(1,3));
+	}
 	
 	
 }
