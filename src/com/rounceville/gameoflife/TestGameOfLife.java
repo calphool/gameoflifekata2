@@ -20,6 +20,21 @@ public class TestGameOfLife {
 		assertNotEquals(gm, gm2);		
 		assertEquals(GridMatrix.class, gm2.getClass());
 	}
+	
+	private boolean allDead(GridMatrix gmToTest) {
+		for(int x=0;x<gmToTest.getWidth();x++)
+			for(int y=0; y < gmToTest.getHeight();y++)
+				if(gmToTest.getAt(x, y))
+					return false;
+		
+		return true;
+	}
+	@Test
+	public void testAnyLiveCellWithFewerThanTwoLiveNeighborsDies() {
+		GridMatrix gm = new GridMatrix(3,4);
+		gm.setAt(1, 1, true);
+		assertEquals(true, allDead(GameOfLife.nextGeneration(gm)));
+	}
 
 	
 }
