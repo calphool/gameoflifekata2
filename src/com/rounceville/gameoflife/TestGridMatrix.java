@@ -12,4 +12,12 @@ public class TestGridMatrix {
 		assertNotEquals(gm, null);
 	}
 
+	@Test
+	public void testGridKnowsItsLengthAndWidth() {
+		GridMatrix gm = new GridMatrix(3,4);
+		assertEquals(3, gm.getWidth());
+		assertEquals(4, gm.getHeight());		
+	}
+	
+
 }
