@@ -11,7 +11,9 @@ public class GameOfLife {
 				if(iLiveNeighborCount < 2 && gm.getAt(x, y))
 					gm2.setAt(x, y, false);
 				if(iLiveNeighborCount > 3 && gm.getAt(x, y))
-					gm2.setAt(x, y, false);					
+					gm2.setAt(x, y, false);	
+				if(iLiveNeighborCount == 3 && !gm.getAt(x, y))
+					gm2.setAt(x, y, true);
 			}
 		}
 		
